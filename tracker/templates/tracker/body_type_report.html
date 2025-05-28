@@ -1,0 +1,15 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+  <h2>Body Type Report</h2>
+
+  {% for body_type, profiles in report.items %}
+    <h3>{{ body_type|title }} ({{ profiles|length }})</h3>
+    <ul>
+      {% for profile in profiles %}
+        <li>{{ profile.user.username }} - BMI: {{ profile.bmi }}</li>
+      {% empty %}
+        <li>No users in this category.</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}

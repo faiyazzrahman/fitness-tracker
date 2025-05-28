@@ -1,0 +1,36 @@
+{% extends 'tracker/prereg_base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container mt-5 d-flex justify-content-center">
+  <div class="card shadow p-4" style="border-radius: 20px; width: 100%; max-width: 500px; background-color: #f1f8ff;">
+    <h2 class="text-center mb-4">Login</h2>
+
+    {% if form.errors %}
+      <div class="alert alert-danger">Invalid username or password.</div>
+    {% endif %}
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+      
+      <div class="mb-3">
+        
+        <input type="text" name="username" placeholder="Username" class="form-control rounded-pill px-4" required>
+      </div>
+      
+      <div class="mb-3">
+        
+        <input type="password" name="password" placeholder="Password" class="form-control rounded-pill px-4" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 rounded-pill">Login</button>
+    </form>
+
+    <div class="text-center mt-3">
+      <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+      <p><a href="{% url 'password_reset' %}">Forgot password?</a></p>
+    </div>
+  </div>
+</div>
+{% endblock %}

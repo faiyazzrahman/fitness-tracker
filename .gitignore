@@ -1,0 +1,31 @@
+# Byte-compiled / cache files
+*.py[cod]
+__pycache__/
+
+# Django stuff
+*.log
+local_settings.py
+.env
+
+# MySQL database configs
+*.cnf
+
+# Ignore MySQL database dump files (optional)
+*.sql
+
+# Environment
+venv/
+env/
+ENV/
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Migrations (keep __init__.py though)
+**/migrations/
+!*/migrations/__init__.py
+
+# OS files
+.DS_Store
+Thumbs.db

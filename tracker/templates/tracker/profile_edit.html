@@ -1,0 +1,88 @@
+{% extends 'tracker/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <div class="mb-3">
+    <h2>Profile Details</h2>
+    <div class="border p-3 rounded bg-light shadow-sm">
+      <p><strong>Username:</strong> {{ profile.user.username }}</p>
+      <p><strong>Age:</strong> {{ profile.age }}</p>
+      <p><strong>Height:</strong> {{ profile.height_cm }} cm</p>
+      <p><strong>Weight:</strong> {{ profile.weight_kg }} kg</p>
+      <p><strong>BMI:</strong> {{ profile.bmi }}</p>
+      <p><strong>Body Type:</strong> {{ profile.get_body_type_display }}</p>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <h3>Personalized Eating and Exercise Suggestions</h3>
+    <div class="border p-3 rounded bg-white shadow-sm">
+
+      {% if profile.body_type == 'thin' %}
+        <h5>Eating Suggestions:</h5>
+        <ul>
+          <li>Increase calorie intake with nutrient-dense foods.</li>
+          <li>Eat more frequent meals and snacks.</li>
+          <li>Focus on protein-rich foods like lean meats, nuts, and dairy.</li>
+          <li>Include healthy fats such as avocados, olive oil, and nuts.</li>
+        </ul>
+        <h5>Exercise Suggestions:</h5>
+        <ul>
+          <li>Focus on strength training with heavier weights and lower reps.</li>
+          <li>Limit excessive cardio to avoid burning too many calories.</li>
+          <li>Incorporate compound movements like squats and deadlifts.</li>
+          <li>Ensure proper rest and recovery between workouts.</li>
+        </ul>
+
+      {% elif profile.body_type == 'medium' %}
+        <h5>Eating Suggestions:</h5>
+        <ul>
+          <li>Maintain balanced meals with carbs, protein, and healthy fats.</li>
+          <li>Eat plenty of fruits and vegetables.</li>
+          <li>Stay hydrated and avoid excessive processed foods.</li>
+          <li>Control portion sizes to maintain weight.</li>
+        </ul>
+        <h5>Exercise Suggestions:</h5>
+        <ul>
+          <li>Combine cardio and strength training for overall fitness.</li>
+          <li>Include high-intensity interval training (HIIT) 2-3 times per week.</li>
+          <li>Incorporate flexibility and balance exercises like yoga or Pilates.</li>
+          <li>Stay consistent with regular physical activity.</li>
+        </ul>
+
+      {% elif profile.body_type == 'fat' %}
+        <h5>Eating Suggestions:</h5>
+        <ul>
+          <li>Focus on a calorie deficit with nutrient-rich, low-calorie foods.</li>
+          <li>Increase intake of fiber-rich vegetables and whole grains.</li>
+          <li>Limit sugar, processed foods, and unhealthy fats.</li>
+          <li>Eat smaller, frequent meals to control hunger.</li>
+        </ul>
+        <h5>Exercise Suggestions:</h5>
+        <ul>
+          <li>Start with low-impact cardio like walking or swimming.</li>
+          <li>Incorporate strength training to build lean muscle mass.</li>
+          <li>Gradually increase exercise intensity and duration.</li>
+          <li>Focus on consistency and gradual progression.</li>
+        </ul>
+
+      {% else %}
+        <p>No suggestions available for this body type.</p>
+      {% endif %}
+      
+    </div>
+  </div>
+
+</div>
+{% endblock %}

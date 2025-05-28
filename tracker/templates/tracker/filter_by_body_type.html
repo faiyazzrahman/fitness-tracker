@@ -1,0 +1,23 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+  <h2>Filter Profiles by Body Type</h2>
+
+  <form method="get">
+    <label for="body_type">Body Type:</label>
+    <select name="body_type" id="body_type">
+      <option value="">All</option>
+      <option value="Thin" {% if selected_type == "Thin" %}selected{% endif %}>Thin</option>
+      <option value="Medium" {% if selected_type == "Medium" %}selected{% endif %}>Medium</option>
+      <option value="Fat" {% if selected_type == "Fat" %}selected{% endif %}>Fat</option>
+    </select>
+    <button type="submit">Filter</button>
+  </form>
+
+  <ul>
+    {% for profile in profiles %}
+      <li>{{ profile.user.username }} - BMI: {{ profile.bmi }} - {{ profile.body_type }}</li>
+    {% empty %}
+      <li>No profiles found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
