@@ -1,8 +1,4 @@
-Thanks for the project structure screenshot! Based on your `fitness_project` Django app and its files (`db_router.py`, `models.py`, multi-database logic, etc.), here’s a **tailored `README.md`** file suitable for GitHub:
 
----
-
-```markdown
 # 🏋️‍♂️ Fitness Tracker
 
 A Django-based web application that tracks user fitness profiles and segregates data across **multiple databases** based on **BMI categories** — `Thin`, `Medium`, and `Fat`.
@@ -139,7 +135,7 @@ This allows better scalability, segmentation, and performance.
 
 **Md Faiyazur Rahman**
 🎓 Django Developer | Full Stack Enthusiast
-🔗 [GitHub](https://github.com/your-username)
+🔗 [GitHub](https://github.com/faiyazzrahman)
 
 ---
 
@@ -151,14 +147,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 > *Track smart. Stay fit. Built with Django.*
 
-```
-
----
-
-Would you like me to:
-- Send this as a `.md` file for direct download?
-- Help generate the `LICENSE` file too?
-- Suggest how to add REST API functionality next?
-
-Let me know!
 ```
