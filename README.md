@@ -147,4 +147,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 > *Track smart. Stay fit. Built with Django.*
 
-```
